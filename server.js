@@ -1,6 +1,7 @@
 const http = require('http');
 const md5 = require("MD5");
 const moment = require("moment")
+const sp = require('./sp')
 const sentenceAnalizer = require('./sentenceAnalizer')
 const operations = require('./operations.js')
 const port = 8000
@@ -22,6 +23,8 @@ let server = http.createServer((req, res) => {
   } else if(url[0] === 'birthdate') {
     res.write(`It has ${ moment(url[1]).fromNow()}\n`);
     res.end(':)')
+  } else if(url[0] === 'spellchecker') {
+    sp(url[1], res)
   } else {
     res.statusCode = 404
     res.end("Command not found! 404\n");
