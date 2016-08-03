@@ -39,5 +39,17 @@ let server = http.createServer((req, res) => {
 
 
 server.listen(port, function(err) {
-  console.log(err || `Server listenning on ${port}`);
+  console.log(err || `Server listenning on ${port} \n\n`);
+  console.log('**************** Help commands: ****************\n')
+  console.log('addition: add/num1 + num2\n');
+  console.log('subtraction: sub/num1 - num2\n');
+  console.log('multiplication: mult/num1 * num2\n');
+  console.log('division: div/num1 / num2\n')
+  console.log('grabbing your gravatar profile picture: gravatar/emaik_address\n')
+  console.log('amalize your sentence word count, character count, and average of word length: analizer/sentence\n')
+  console.log('how many years from your birthday: birthdate/MM-DD-YYYY\n')
+  console.log('use the spellchecker: spellchecker/sentence\n');
+  console.log('count how many bad words: profanity/sentence\n');
+  console.log('meaning of a word: dictionary/word\n')
+  console.log('*********************************************')
 })
