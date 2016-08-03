@@ -1,11 +1,13 @@
 const http = require('http');
 const md5 = require("MD5");
+const moment = require("moment")
 const sentenceAnalizer = require('./sentenceAnalizer')
 const operations = require('./operations.js')
 const port = 8000
 let server = http.createServer((req, res) => {
 
   let url = decodeURI(req.url).match(/[^/]+/g)
+  console.log('url ', url)
   if(url[0] === 'add' || url[0] === 'subs'
     || url[0] === "mult" || url[0] === 'div'
     || url[0] === 'pow') {
@@ -18,7 +20,8 @@ let server = http.createServer((req, res) => {
   }else if (url[0] === 'analizer') {
     sentenceAnalizer(url[1], res)
   } else if(url[0] === 'birthdate') {
-
+    res.write(`It has ${ moment(url[1]).fromNow()}\n`);
+    res.end(':)')
   } else {
     res.statusCode = 404
     res.end("Command not found! 404\n");
