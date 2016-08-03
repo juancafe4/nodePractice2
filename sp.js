@@ -2,8 +2,7 @@ const spellchecker = require('spellchecker');
 
 module.exports = function(str, res) {
   let words = str.match(/[\w]+/g)
-  let corrections = []
-  console.log(words)
+
   words.map((val) => {
      if (spellchecker.isMisspelled(val)) {
         res.write(`Wrong word: ${val}\n`)
