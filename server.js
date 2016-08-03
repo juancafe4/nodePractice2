@@ -8,6 +8,7 @@ const operations = require('./operations.js')
 const dict = require('./mydictionary.js')
 const port = 8000
 let server = http.createServer((req, res) => {
+  console.log('first phase url: ', req.url)
 
   let url = decodeURI(req.url).match(/[^/]+/g)
   console.log('url ', url)
@@ -40,6 +41,7 @@ let server = http.createServer((req, res) => {
 
 server.listen(port, function(err) {
   console.log(err || `Server listenning on ${port} \n\n`);
+
   console.log('**************** Help commands: ****************\n')
   console.log('addition: add/num1 + num2\n');
   console.log('subtraction: sub/num1 - num2\n');
