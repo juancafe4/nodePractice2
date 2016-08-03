@@ -22,6 +22,7 @@ module.exports = function operation(arr, res) {
 
     }
 
+
     res.write(`The answer is ${result}!\n`)
   } else {
     if(arr[0])

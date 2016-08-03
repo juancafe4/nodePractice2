@@ -1,0 +1,23 @@
+{
+  "name": "custom_api",
+  "version": "1.0.0",
+  "description": "Practice with API endpoints",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juancafe4/nodePractice2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juancafe4/nodePractice2/issues"
+  },
+  "homepage": "https://github.com/juancafe4/nodePractice2#readme",
+  "dependencies": {
+    "MD5": "^1.3.0"
+  }
+}
